@@ -150,73 +150,76 @@
         </div>
         <div id="status">Ready to start</div>
         <div id="error" style="display: none;"></div> -->
-        <div class="flex flex-row items-center space-x-4 h-full p-5">
-            <div class="flex flex-col space-y-6 flex-1 w-3/4 h-full">
+        <div class="flex flex-row items-center space-x-4 h-full p-5 relative ">
+            <div class="flex-1 w-3/4 h-full">
 
-                <div
-                    class="flex w-full items-center justify-center text-neutral-300/80 font-bold text-2xl h-[100px]">
-                    <h2>
-                       Voice Assistant
-                    </h2>
-                </div>
-
-                <div
-                    class="flex-1 flex items-center justify-center min-h-[calc(100vh-250px)] w-full">
+                <div class="flex flex-col h-full">
                     <div
-                        class="w-[120px] h-[120px] rounded-full relative ">
-                        <img
-                            src="assets/logo.jpeg"
-                            class="w-full h-full object-contain z-10 rounded-full" />
-                        <div class="wave hidden"></div>
-                        <div class="wave hidden"></div>
-                        <div class="wave hidden"></div>
+                        class="flex w-full items-center justify-center text-neutral-300/80 font-bold text-2xl h-[100px]">
+                        <h2>
+                            Voice Assistant
+                        </h2>
+                    </div>
+
+                    <div
+                        class="flex-1 flex items-center justify-center min-h-[calc(100vh-250px)] w-full">
+                        <div
+                            class="w-[120px] h-[120px] rounded-full relative ">
+                            <img
+                                src="assets/logo.jpeg"
+                                class="w-full h-full object-contain z-10 rounded-full" />
+                            <div class="wave hidden"></div>
+                            <div class="wave hidden"></div>
+                            <div class="wave hidden"></div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="w-full flex items-center justify-center flex-1">
+                        <div
+                            class="flex flex-row items-center justify-between max-w-[300px] w-full mx-auto">
+
+                            <button id="play-btn" title="start"
+                                class="w-10 h-10 rounded-full bg-neutral-800/80 backdrop-blur-xl flex items-center justify-center">
+                                <i
+                                    class="fa fa-play text-lg text-neutral-300/80"></i>
+                            </button>
+
+                            <button id="pause-btn" title="pause"
+                                class="w-10 h-10 rounded-full bg-neutral-800/80 backdrop-blur-xl flex items-center justify-center hidden">
+                                <span
+                                    class="w-3 rounded-[2px] h-3 bg-red-600"></span>
+                            </button>
+
+                            <button title="mute" id="mute"
+                                class="w-10 h-10 rounded-full bg-neutral-800/80 backdrop-blur-xl flex items-center justify-center">
+                                <i
+                                    class="fa fa-microphone text-lg text-neutral-300/80"></i>
+                            </button>
+                            <button title="unmute" id="unmute"
+                                class="w-10 h-10 rounded-full bg-neutral-800/80 backdrop-blur-xl flex items-center justify-center hidden">
+                                <i
+                                    class='fa fa-microphone-slash text-lg text-red-600'></i>
+                            </button>
+
+                            <button id="show-transcription"
+                                title="show transcription"
+                                class="w-10 h-10 rounded-full bg-neutral-800/80 backdrop-blur-xl flex items-center justify-center">
+
+                                <i
+                                    class="material-icons text-lg text-neutral-300/80">message</i>
+                            </button>
+
+                        </div>
                     </div>
                 </div>
 
-                <div
-                    class="w-full flex items-center justify-center ">
-                    <div
-                        class="flex flex-row items-center justify-between max-w-[300px] w-full mx-auto">
-
-                        <button id="play-btn" title="start"
-                            class="w-10 h-10 rounded-full bg-neutral-800/80 backdrop-blur-xl flex items-center justify-center">
-                            <span
-                                class="ml-0.5 text-lg text-neutral-300/80">&#9658;</span>
-                        </button>
-
-                        <button id="pause-btn" title="pause"
-                            class="w-10 h-10 rounded-full bg-neutral-800/80 backdrop-blur-xl flex items-center justify-center hidden">
-                            <span
-                                class="w-3 rounded-[2px] h-3 bg-red-600"></span>
-                        </button>
-
-                        <button title="mute" id="mute"
-                            class="w-10 h-10 rounded-full bg-neutral-800/80 backdrop-blur-xl flex items-center justify-center">
-                            <i
-                                class="fa fa-microphone text-lg text-neutral-300/80"></i>
-                        </button>
-                        <button title="unmute" id="unmute"
-                            class="w-10 h-10 rounded-full bg-neutral-800/80 backdrop-blur-xl flex items-center justify-center hidden">
-                            <i
-                                class='fa fa-microphone-slash text-lg text-red-600'></i>
-                        </button>
-
-                        <button id="show-transcription"
-                            title="show transcription"
-                            class="w-10 h-10 rounded-full bg-neutral-800/80 backdrop-blur-xl flex items-center justify-center">
-
-                            <i
-                                class="material-icons text-lg text-neutral-300/80">message</i>
-                        </button>
-
-                    </div>
-                </div>
             </div>
             <div
-                class="w-1/4 h-full bg-neutral-800/80 text-white rounded-xl px-3 py-12 overflow-y-auto text-[15px] text-medium relative"
+                class="lg:w-1/4 w-2/3 sm:w-1/2 h-full bg-neutral-800 text-white rounded-xl px-3 py-12 overflow-y-auto text-[15px] absolute right-0 rounded-xl text-medium hidden"
                 id="transcription-container">
                 <button id="transcription-close"
-                    class="w-8 h-8 z-10 rounded-full bg-neutral-700/80 flex items-center justify-center absolute right-2 top-2">
+                    class="w-8 h-8 z-10 rounded-full bg-neutral-700/80 flex items-center justify-center absolute right-4 top-4">
 
                     <i class="material-icons text-lg text-neutral-500">close</i>
 
@@ -226,7 +229,7 @@
         </div>
 
         <script src="https://cdn.tailwindcss.com"></script>
-   
+
         <script>
         
         const startButton = document.getElementById('play-btn');
@@ -276,6 +279,7 @@
         }
     
         function handleTranscript(message) {
+            console.log(message)
             if (message.response?.output?.[0]?.content?.[0]?.transcript) {
                 transcription.innerText += message.response.output[0].content[0].transcript + ' ';
                 closeTranscription.classList.remove('hidden')
